@@ -59,6 +59,11 @@
     a {
       text-decoration: none;
     }
+    sup.draft {
+      margin-left: 0.35em;
+      font-size: 0.77em;
+      font-weight: 500;
+    }
   }
 
   &-tags {
