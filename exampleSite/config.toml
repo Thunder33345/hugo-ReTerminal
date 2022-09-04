@@ -10,7 +10,8 @@ themesDir = "../.."
   themeColor = "orange"
   showMenuItems = 2
   fullWidthTheme = false
-  centerTheme = false
+  centerTheme = true
+  showLastUpdated = true
 
 [languages]
   [languages.en]

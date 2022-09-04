@@ -1,10 +1,12 @@
 +++
 title = "Hello Friend"
 date = "2019-01-25"
+lastmod = "2019-01-26"
 author = "Lorem Ipsum"
 cover = "img/hello.jpg"
 description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ex, sed tempus. Curabitur ipsum dui, commodo eget ante."
 weight = 10
+readingTime = true
 +++
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante. **Donec quis dolor nec nunc mollis interdum vel in purus**. Sed vitae leo scelerisque, sollicitudin elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.
