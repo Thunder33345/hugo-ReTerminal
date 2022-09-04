@@ -130,6 +130,12 @@ paginate = 5
   # can be overridden in a page's front-matter
   # TocTitle = "Table of Contents" # default
 
+[params.anchor]
+    #hideOnList allows you to disable anchors for list
+    hideOnList = false
+    #hideOnList allows you to disable anchors for page
+    hideOnPage = false
+
 [params.twitter]
   # set Twitter handles for Twitter cards
   # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
