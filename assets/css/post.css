@@ -42,7 +42,10 @@
     span.pinned {
       font-weight: bold;
       margin-left: auto;
-  }
+    }
+    span {
+      white-space:pre
+    }
   }
 
   &-title {
