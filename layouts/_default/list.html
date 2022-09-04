@@ -1,7 +1,7 @@
 {{ define "main" }}
-  {{ with .Content }}
+  {{ if .Content }}
   <div class="index-content {{ if .Params.framed -}}framed{{- end -}}">
-      {{ . }}
+      {{ partial "display_content" .}}
     </div>
   {{ end }}
   <div class="posts">
