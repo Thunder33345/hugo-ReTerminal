@@ -1,24 +1,19 @@
-# Terminal
+# ReTerminal
 
-![Terminal](https://github.com/panr/hugo-theme-terminal/blob/master/images/screenshot.png?raw=true)
+This is a personal fork of [panr's terminal theme](https://github.com/panr/hugo-theme-terminal), see upstream's [README.md](https://github.com/panr/hugo-theme-terminal#readme) for more information
 
-### DEMO - https://hugo-terminal.now.sh/
+There will be no support, no update guarantee with upstream, everything here is provided as is.
+
+It's released publicily for archival purposes.
 
 ---
 
 - [Features](#features)
 - [Built-in shortcodes](#built-in-shortcodes)
 - [Code highlighting](#code-highlighting)
-- [How to start](#how-to-start)
-- [How to run your site](#how-to-run-your-site)
-- [How to configure](#how-to-configure)
+- [Configuration File](#configuration-file)
 - [Post archetype](#post-archetype)
 - [Add-ons](#add-ons)
-- [How to (safely) edit the theme](#how-to-edit)
-- [Found a bug?](#bug)
-- [New cool idea or feature](#feature)
-- [Terminal theme user?](#terminal-theme-user)
-- [Sponsoring](#sponsoring)
 - [Licence](#licence)
 
 ## Features
@@ -76,37 +71,7 @@ A custom syntax highlighting based on PrismJS. All you need to do is to wrap you
 ```
 ````
 
-**Supported languages**: actionscript, apacheconf, applescript, bash, c, clike, cmake, coffeescript, cpp, csharp, csp, css, css-extras, diff, django, docker, elixir, elm, erlang, flow, fsharp, git, go, graphql, haml, handlebars, haskell, http, java, javascript, json, jsx, kotlin, latex, less, llvm, makefile, markdown, markup, markup-templating, nasm, objectivec, ocaml, perl, php, php-extras, powershell, processing, pug, python, r, reason, ruby, rust, sass, scala, scheme, scss, sql, stylus, swift, textile, toml, tsx, twig, typescript, vim, visual-basic, wasm, yaml.
-
-## How to start
-
-You can download the theme manually by going to [https://github.com/panr/hugo-theme-terminal.git](https://github.com/panr/hugo-theme-terminal.git) and pasting it to `themes/terminal` in your root directory.
-
-You can also clone it directly to your Hugo folder:
-
-```
-git clone https://github.com/panr/hugo-theme-terminal.git themes/terminal
-```
-
-If you don't want to make any radical changes, it's the best option, because you can get new updates when they are available. You can also include it as a git submodule:
-
-```
-git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal
-```
-
-⚠️ **The theme needs at least Hugo version 0.74.x**.
-
-## How to run your site
-
-If you installed all needed `npm` dependencies, then you can run:
-
-```
-hugo server -t terminal
-```
-
-and go to `localhost:1313` in your browser. From now on all the changes you make will go live, so you don't need to refresh your browser every single time.
-
-## How to configure
+## Configuration File
 
 The theme doesn't require any advanced configuration. Just copy:
 
@@ -165,7 +130,6 @@ paginate = 5
   # can be overridden in a page's front-matter
   # TocTitle = "Table of Contents" # default
 
-
 [params.twitter]
   # set Twitter handles for Twitter cards
   # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
@@ -217,71 +181,6 @@ See the default `post` file params supported by the theme — https://github.com
 - **Comments** — for adding comments to your blog posts please take a look at `layouts/partials/comments.html` https://github.com/panr/hugo-theme-terminal/blob/master/layouts/partials/comments.html.
 - **Extended Head** — please take a look at `layouts/partials/extended_head.html` https://github.com/panr/hugo-theme-terminal/blob/master/layouts/partials/extended_head.html
 - **Extended Footer** — please take a look at `layouts/partials/extended_footer.html` https://github.com/panr/hugo-theme-terminal/blob/master/layouts/partials/extended_footer.html
-
-## How to (safely) edit the theme <a id="how-to-edit" />
-
-If you have to override only some of the styles, you can do this easily by adding `static/style.css` in your root directory and point things you want to change.
-
-To change something directly in the theme, you have to go to `themes/terminal` and modify the files.
-
-First, you need to install Node dependencies. To do so, go to the theme directory (from your Hugo root directory):
-
-```bash
- cd themes/terminal
-```
-
- then run:
-
- ```bash
- npm install
- npm i yarn
- yarn
- ```
-
-After you modified the files you can run webpack in watch mode:
-
-```bash
-yarn dev
-```
-
-or rebuild theme
-
-```bash
-yarn build
-```
-
-To see the changes (remember to restart `hugo server`).
-
-## Found a bug? <a id="bug" />
-
-If you spot any bugs, please use [Issue Tracker](https://github.com/panr/hugo-theme-terminal/issues) or create a new [Pull Request](https://github.com/panr/hugo-theme-terminal/pulls) to fix the issue.
-
-## New cool idea or feature? <a id="feature" />
-
-The theme is in constant development since 2019 and has got many cool features that helped many of you and made the theme better. But there were also many features that I wasn't sure about because I want to keep the theme as simple as possible.
-
-So, let's say you have an idea of how to extend the theme. That's cool and you're welcome to do that, just follow these steps:
-
-- fork the theme
-- implement the feature
-- write an instruction how to use the feature
-- give a working example of the implementation for other users
-- add info about your work to `COMMUNITY-FEATURES.md`
-- make a PR with edited `COMMUNITY-FEATURES.md`
-
-This will help keeping the theme close to its roots, and also allow anyone who wishes to improve it and match their needs, to do whatever they want.
-
-Sounds OK? Cool, let's rock! 🤘
-
-## Terminal theme user?
-
-I'd be happy to know more about you and what you are doing. If you want to share it, please make a contribution and [add your site to the list](https://github.com/panr/hugo-theme-terminal/blob/master/USERS.md)! 🤗
-
-## Sponsoring
-
-If you like my work and want to support the development of the project, now you can! Just:
-
-<a href="https://www.buymeacoffee.com/panr" target="_blank"><img src="https://res.cloudinary.com/panr/image/upload/v1579374705/buymeacoffee_y6yvov.svg" alt="Buy Me A Coffee" ></a>
 
 ## License
 
