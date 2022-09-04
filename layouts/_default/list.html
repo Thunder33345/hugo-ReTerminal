@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ with .Content }}
-    <div class="index-content">
+  <div class="index-content {{ if .Params.framed -}}framed{{- end -}}">
       {{ . }}
     </div>
   {{ end }}
@@ -31,7 +31,7 @@
 
         {{ partial "cover.html" . }}
 
-      
+
         <div class="post-content">
           {{ if .Params.showFullContent }}
             {{ .Content }}
