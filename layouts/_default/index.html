@@ -26,6 +26,9 @@
           {{ with .Params.Author }}
             <span class="post-author">:: {{ . }}</span>
           {{ end }}
+          {{- if isset .Params "weight" -}}
+            <span class="pinned">⭱</span>
+          {{- end -}}
         </div>
 
         {{ if .Params.tags }}
