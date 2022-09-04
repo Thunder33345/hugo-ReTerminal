@@ -21,6 +21,15 @@ The frontmatter `showAnchor` key will be able to overwrite it on an per page bas
 ## Shortcode
 
 ## Vanilla
+
+### Frame
+List and Home pages can optionally have a frame around the post to stand out. You can do this by setting the `framed` key to true in front matter.
+
+This is only for List and Home, individual pages are not supported.
+```yaml
+framed: false
+```
+
 TODO: document vanilla terminal features for future references
 List of default frontmatter keys:
 author
