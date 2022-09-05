@@ -4,6 +4,9 @@
 # Keep note local
 TODO.md
 
+# Generated source maps
+static/assets/*.map
+
 # Created by https://www.gitignore.io/api/node
 # Edit at https://www.gitignore.io/?templates=node
 
