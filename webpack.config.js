@@ -7,6 +7,10 @@ const path = require("path");
 const join = (...paths) => path.join(__dirname, ...paths);
 
 module.exports = (env, { mode }) => ({
+  mode: mode == "development" ? "development" : "production",
+  devtool: mode == "development" ? env.FULLMAP ? "source-map" : "eval-cheap-source-map" : false,
+  //source-map will show for css
+  //eval-cheap-source-map for normal
   resolve: {
     extensions: [".js", ".css"],
     modules: ["assets", "node_modules"],
