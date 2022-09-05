@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "dev": "webpack --mode=development --watch",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "hugo": "cd ./exampleSite && hugo server -D -p 1558"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -32,7 +33,7 @@
     "eslint": "^7.0.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.31.5",
     "eslint-plugin-react-hooks": "4",
@@ -42,7 +43,6 @@
     "postcss": "^8.2.10",
     "postcss-browser-reporter": "^0.6.0",
     "postcss-cli": "^8.3.1",
-    "postcss-color-function": "^4.0.1",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-import": "^14.0.0",
     "postcss-loader": "^5.2.0",
