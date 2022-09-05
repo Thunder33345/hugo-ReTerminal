@@ -14,14 +14,16 @@
             {{- end -}}
           </a></h1>
         <div class="post-meta">
-          <span class="post-date">
-            {{- .Date.Format "2006-01-02" -}}
-          </span>
-          {{ with .Params.Author }}
-            <span class="post-author"> :: {{ . }}</span>
-          {{ end }}
+          <div class="post-meta-info">
+            <span class="post-date">
+              {{- .Date.Format "2006-01-02" -}}
+            </span>
+            {{ with .Params.Author }}
+              <span class="post-author">{{ . }}</span>
+            {{ end }}
+          </div>
           {{- if isset .Params "weight" -}}
-            <span class="pinned">⭱</span>
+            <span class="post-meta-pinned">⭱</span>
           {{- end -}}
         </div>
 
