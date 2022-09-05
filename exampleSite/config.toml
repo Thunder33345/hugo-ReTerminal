@@ -8,7 +8,7 @@ themesDir = "../.."
 [params]
   contentTypeName = "posts"
   themeColor = "orange"
-  showMenuItems = 2
+  showMenuItems = 5
   fullWidthTheme = false
   centerTheme = true
   showLastUpdated = true
@@ -29,14 +29,22 @@ themesDir = "../.."
 
     [languages.en.menu]
       [[languages.en.menu.main]]
+        weight = 1
         identifier = "about"
         name = "About"
         url = "/about"
       [[languages.en.menu.main]]
+        weight = 2
         identifier = "showcase"
         name = "Showcase"
         url = "/showcase"
       [[languages.en.menu.main]]
+        weight = 3
         identifier = "posts"
         name = "Posts"
         url = "/posts/"
+      [[languages.en.menu.main]]
+        weight = 4
+        identifier = "cookbook"
+        name = "Cookbook"
+        url = "/cookbook/"
