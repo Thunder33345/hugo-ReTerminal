@@ -15,6 +15,11 @@ input, textarea, select {
   &:active {
     box-shadow: none;
   }
+
+  &[type=checkbox]:checked{
+    outline: 7px solid var(--accent);
+    outline-offset: -50px;
+  }
 }
 
 select {

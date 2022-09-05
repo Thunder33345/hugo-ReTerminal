@@ -9,5 +9,6 @@ Improved frames so it can be applied on list
 
 Fixed `::` spacing on post meta
 Fixed button hitbox not occupying the full width
+Fixed checked checkboxes not showing as checked
 
 ## 2022-09-04 Branch off!
