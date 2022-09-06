@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2022-09-05
+Added `params.metaRobots` to control indexing
 Added pinned icon in list pages
 Added support on showing draft posts
 Added anchor support on listings

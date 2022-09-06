@@ -4,6 +4,7 @@ theme = "reterminal"
 paginate = 5
 themesDir = "../.."
 
+enableRobotsTXT = true
 
 [params]
   contentTypeName = "posts"
@@ -12,6 +13,14 @@ themesDir = "../.."
   fullWidthTheme = false
   centerTheme = true
   showLastUpdated = true
+  noindex = false
+[params.metaRobots]
+  assumeProduction = true
+  forceNoindex = false
+  disableAutoIndex = false
+  indexValue = "follow, index"
+  noindexValue = "noindex, nofollow"
+
 
 [languages]
   [languages.en]

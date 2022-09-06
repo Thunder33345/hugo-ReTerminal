@@ -2,7 +2,32 @@
 ## Preface
 This is the feature references document, it should document params(site and frontmatter while specifying where they are applicable) and shortcodes.
 
+@TODO rename value to params and values
+@TODO tal about different availabilities, site only, frontmatter only, cascading (.Param "key" lookup)
+@TODO note that example config uses default values
+
 ## Values
+
+### Meta No Index
+
+```toml
+[params.metaRobots]
+  #assumeProduction will allow indexing, even if hugo.IsProduction is false
+  assumeProduction = true
+  #forceNoindex will disable indexing forcefully, it cannot be overwritten
+  forceNoindex = false
+  #disableAutoIndex will set pages to noindex by default, unless specified otherwise
+  disableAutoIndex = false
+  #indexValue is what to emit, if indexing is allowed, nothing will stop it from emitting entirely
+  indexValue = ""
+  #noindexValue is what to emit, if indexing is not allowed
+  noindexValue = "noindex, nofollow"
+```
+indexValue could also been `follow, index` but it should been unnecessary
+
+the frontmatter `noindex` will allow individual page to control if indexing is wanted
+setting to false will allow index(useful for when `disableAutoIndex` is true), will not overwrite `forceNoindex`
+setting it true will disallow index of the specific page
 
 ### Heading Anchors
 Headings on pages content and listing content are anchored by default, on list and on individual pages. Listing entries's content are intentionally not anchored.

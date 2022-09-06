@@ -72,5 +72,23 @@
   <link href="{{ .RelPermalink }}" rel="alternate" type="application/json" title="{{ $.Site.Title }}" />
 {{ end }}
 
+{{- $index := false -}}
+{{- if and (or hugo.IsProduction ( .Param "metaRobots.assumeProduction" | default false )) (default true (not ( .Param "metaRobots.forceNoindex"))) -}}
+  {{- $index = true -}}
+  {{- if .Param "metaRobots.disableAutoIndex" -}}
+    {{- $index = false -}}
+  {{- end -}}
+  {{ if isset .Params "noindex" -}}
+    {{ $index = not .Params.noIndex -}}
+  {{ end -}}
+{{- end -}}
+
+{{- if $index -}}
+  {{- with .Param "metaRobots.indexValue" -}}
+    <meta name="robots" content='{{- . -}}'>
+  {{- end -}}
+{{- else -}}
+  <meta name="robots" content='{{- .Param "metaRobots.noindexValue" | default "noindex, nofollow" -}}'>
+{{- end -}}
 <!-- Extended head section-->
 {{ partial "extended_head.html" . }}
