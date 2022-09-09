@@ -46,6 +46,7 @@ Headings on pages content and listing content are anchored by default, on list a
 
 Below shows the default values of each params
 ```toml
+#headingAnchor controls if headings links are shown or disabled
 [params.headingAnchor]
     #hideOnList allows you to disable anchors for list
     disableOnList = false
