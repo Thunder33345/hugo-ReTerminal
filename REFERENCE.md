@@ -8,31 +8,39 @@ This is the feature references document, it should document params(site and fron
 
 ## Values
 
-### Meta No Index
+### Meta Indexing control
+By default, site will allow indexing when it's built in production, otherwise it uses noindex meta tags.
+You can configure this to tell search engine to not index your page by configuring the parameters below.
 
+Below shows the default value for all parameters.
 ```toml
+#metaRobots allows you to control the meta robots directive
 [params.metaRobots]
-  #assumeProduction will allow indexing, even if hugo.IsProduction is false
-  assumeProduction = true
-  #forceNoindex will disable indexing forcefully, it cannot be overwritten
+  #assumeProduction will allow indexing, even when hugo.IsProduction is false
+  assumeProduction = false
+  #forceNoindex will disable indexing forcefully on all pages
+  #all pages will have noindex set and it cannot be overwritten
   forceNoindex = false
-  #disableAutoIndex will set pages to noindex by default, unless specified otherwise
+  #disableAutoIndex will set pages to noindex by default, instead of allowing index by default
+  #can be overwritten by a page's "noindex" parameter
   disableAutoIndex = false
-  #indexValue is what to emit, if indexing is allowed, nothing will stop it from emitting entirely
+  #indexValue is what to emit, if indexing is allowed
+  #empty will stop it from emitting entirely
+  #this is only useful if you want a custom directive instead of nothing
   indexValue = ""
   #noindexValue is what to emit, if indexing is not allowed
   noindexValue = "noindex, nofollow"
 ```
-indexValue could also been `follow, index` but it should been unnecessary
+For other valid `indexValue`/`noindexValue` see [Google Developers](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag)
 
-the frontmatter `noindex` will allow individual page to control if indexing is wanted
+The frontmatter exclusive parameter `noindex` will allow individual page to control if indexing is wanted
 setting to false will allow index(useful for when `disableAutoIndex` is true), will not overwrite `forceNoindex`
 setting it true will disallow index of the specific page
 
 ### Heading Anchors
 Headings on pages content and listing content are anchored by default, on list and on individual pages. Listing entries's content are intentionally not anchored.
 
-Bellow shows the default values of each params
+Below shows the default values of each params
 ```toml
 [params.anchor]
     #hideOnList allows you to disable anchors for list
