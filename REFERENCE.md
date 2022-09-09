@@ -46,14 +46,14 @@ Headings on pages content and listing content are anchored by default, on list a
 
 Below shows the default values of each params
 ```toml
-[params.anchor]
+[params.headingAnchor]
     #hideOnList allows you to disable anchors for list
-    hideOnList = false
+    disableOnList = false
     #hideOnList allows you to disable anchors for page
-    hideOnPage = false
+    disableOnPage = false
 ```
 
-The frontmatter `showAnchor` key will be able to overwrite it on an per page basis. This will be respected for both Page and List.
+The frontmatter `showAnchor`(location: frontmatter) key will be able to overwrite it on an per page basis. This will be respected for both Page and List.
 
 ## Shortcode
 

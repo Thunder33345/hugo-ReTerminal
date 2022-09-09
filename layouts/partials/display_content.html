@@ -1,11 +1,11 @@
 {{- if .Content }}
     {{ $show := true }}
 
-    {{ if and .IsSection (.Param "anchor.hideOnList") }}
+    {{ if and .IsSection (.Param "headingAnchor.disableOnList") }}
         {{ $show = false }}
     {{ end }}
 
-    {{ if and .IsPage (.Param "anchor.hideOnPage") }}
+    {{ if and .IsPage (.Param "headingAnchor.disableOnPage") }}
         {{ $show = false }}
     {{ end }}
 
