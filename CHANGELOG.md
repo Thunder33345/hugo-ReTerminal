@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2022-09-05
+Added meta theme-color support
+Added support for listing all alternative formats
 Added `params.metaRobots` to control indexing
 Added pinned icon in list pages
 Added support on showing draft posts

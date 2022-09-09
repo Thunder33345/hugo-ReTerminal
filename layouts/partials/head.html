@@ -61,6 +61,10 @@
   <meta property="article:published_time" content="{{ time .Date }}" />
 {{- end }}
 
+{{- with .Param "metaThemeColor" }}
+  <meta name="theme-color" content='{{.}}'>
+{{- end }}
+
 {{ range .AlternativeOutputFormats -}}
   <link rel="{{ .Rel }}" {{ .MediaType.Type | printf "type=%s" | safeHTMLAttr }} href="{{ .Permalink | safeURL }}" title="{{ $.Site.Title }}">
 {{- end }}

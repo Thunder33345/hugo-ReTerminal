@@ -59,6 +59,9 @@ paginate = 5
   # can be overridden in a page's front-matter
   # TocTitle = "Table of Contents" # default
 
+  #set a theme color for your website
+  #metaThemeColor = "#000000"
+
 [params.anchor]
     #hideOnList allows you to disable anchors for list
     hideOnList = false
