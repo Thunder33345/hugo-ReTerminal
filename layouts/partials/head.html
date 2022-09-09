@@ -61,17 +61,11 @@
   <meta property="article:published_time" content="{{ time .Date }}" />
 {{- end }}
 
-<!-- RSS -->
-{{- with .OutputFormats.Get "RSS" -}}
-  <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-{{- end -}}
+{{ range .AlternativeOutputFormats -}}
+  <link rel="{{ .Rel }}" {{ .MediaType.Type | printf "type=%s" | safeHTMLAttr }} href="{{ .Permalink | safeURL }}" title="{{ $.Site.Title }}">
+{{- end }}
 
-<!-- JSON Feed -->
-{{- with .OutputFormats.Get "json" -}}
-  <link href="{{ .RelPermalink }}" rel="alternate" type="application/json" title="{{ $.Site.Title }}" />
-{{- end -}}
-
-{{- $index := false -}}
+{{ $index := false -}}
 {{- if and (or hugo.IsProduction ( .Param "metaRobots.assumeProduction" | default false )) (not (default false ( .Param "metaRobots.forceNoindex"))) -}}
   {{- $index = true -}}
   {{- if .Param "metaRobots.disableAutoIndex" -}}
