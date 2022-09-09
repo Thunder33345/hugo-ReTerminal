@@ -73,7 +73,7 @@
 {{ end }}
 
 {{- $index := false -}}
-{{- if and (or hugo.IsProduction ( .Param "metaRobots.assumeProduction" | default false )) (default true (not ( .Param "metaRobots.forceNoindex"))) -}}
+{{- if and (or hugo.IsProduction ( .Param "metaRobots.assumeProduction" | default false )) (not (default false ( .Param "metaRobots.forceNoindex"))) -}}
   {{- $index = true -}}
   {{- if .Param "metaRobots.disableAutoIndex" -}}
     {{- $index = false -}}

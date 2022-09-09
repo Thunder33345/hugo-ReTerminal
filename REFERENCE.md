@@ -2,17 +2,18 @@
 ## Preface
 This is the feature references document, it should document params(site and frontmatter while specifying where they are applicable) and shortcodes.
 
-@TODO rename value to params and values
-@TODO tal about different availabilities, site only, frontmatter only, cascading (.Param "key" lookup)
-@TODO note that example config uses default values
-
 ## Values
+
+Configuration Location:
+- Site: This setting can only be set in the main `config.toml`.
+- Fallback: This setting can be set in a page's frontmatter, or a site's main config.
+- Frontmatter: This setting can only be set in a specific page's frontmatter.
 
 ### Meta Indexing control
 By default, site will allow indexing when it's built in production, otherwise it uses noindex meta tags.
 You can configure this to tell search engine to not index your page by configuring the parameters below.
 
-Below shows the default value for all parameters.
+Below shows the default value for all parameters. Location: Fallback
 ```toml
 #metaRobots allows you to control the meta robots directive
 [params.metaRobots]
@@ -33,9 +34,12 @@ Below shows the default value for all parameters.
 ```
 For other valid `indexValue`/`noindexValue` see [Google Developers](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag)
 
-The frontmatter exclusive parameter `noindex` will allow individual page to control if indexing is wanted
-setting to false will allow index(useful for when `disableAutoIndex` is true), will not overwrite `forceNoindex`
-setting it true will disallow index of the specific page
+The frontmatter parameter `noindex`(location: frontmatter) will allow individual page to control if indexing is wanted.
+
+Defaults to unset which will follow site default configuration.
+
+Setting to false will allow index(useful for when `disableAutoIndex` is true), will not overwrite `forceNoindex`.
+Setting it true will disallow index of the specific page.
 
 ### Heading Anchors
 Headings on pages content and listing content are anchored by default, on list and on individual pages. Listing entries's content are intentionally not anchored.
