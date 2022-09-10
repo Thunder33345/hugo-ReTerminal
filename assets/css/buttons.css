@@ -25,7 +25,7 @@ a.button {
   outline: none;
 
   &:hover {
-    background: color-mod(var(--accent) a(90%));
+    background: var(--accent-hack-a-90);
   }
 
   /* variants */

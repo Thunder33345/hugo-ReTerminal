@@ -1,4 +1,7 @@
 # Changelog
+## 2022-09-22
+
+Hack fixed colors not being shaded properly by postcss color mod
 
 ## 2022-09-05
 Added meta theme-color support
