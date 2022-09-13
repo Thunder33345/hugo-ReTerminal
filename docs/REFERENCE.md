@@ -9,6 +9,22 @@ Configuration Location:
 - Fallback: This setting can be set in a page's frontmatter, or a site's main config.
 - Frontmatter: This setting can only be set in a specific page's frontmatter.
 
+### Pager control
+Controls if pager button is visible
+Configuration can only be done on site config
+
+```toml
+[params.pager]
+  #default controls if pager will be shown by default
+  default = true
+#overwrite allows you to overwrite individual sections by path name
+#path name will always be treated as lowercased
+#"" can be used for root path
+[params.pager.overwrite]
+  "path/to/section" = true
+  "" = false
+```
+
 ### Meta Indexing control
 By default, site will allow indexing when it's built in production, otherwise it uses noindex meta tags.
 You can configure this to tell search engine to not index your page by configuring the parameters below.

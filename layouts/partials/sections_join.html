@@ -1,0 +1,16 @@
+{{/*  Arguments
+    "p" page; the page to get section for
+    "page" bool; include page?
+    "home" bool; include home?
+    "section" bool; include section?
+    "path" bool; force path as names
+
+    */}}
+
+{{ $s := newScratch }}
+{{/* "path" is where the section path gets stored*/}}
+{{/* Init with blank slice is intentional to fix an unknown bug, do not remove */}}
+{{ $s.Add "path" (slice) }}
+{{ partial "sections_join_r" (dict "p1" .p "p2" .p "s" ($s) "r" .) }}
+{{ return $s.Get "path" }}
+

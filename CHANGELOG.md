@@ -3,6 +3,9 @@
 
 Hack fixed colors not being shaded properly by postcss color mod
 
+## 2022-09-14
+Added pager control
+
 ## 2022-09-05
 Added meta theme-color support
 Added support for listing all alternative formats

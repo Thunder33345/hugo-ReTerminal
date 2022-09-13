@@ -99,6 +99,14 @@ paginate = 5
   #noindexValue is what to emit, if indexing is not allowed
   noindexValue = "noindex, nofollow"
 
+[params.pager]
+  #default controls if pager will be shown by default
+  default = true
+#overwrite allows you to overwrite individual sections by path name
+[params.pager.overwrite]
+  "path/to/section" = true
+  "" = false
+
 [languages]
   [languages.en]
     languageName = "English"

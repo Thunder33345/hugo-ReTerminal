@@ -1,0 +1,21 @@
+{{ if .p1.Parent }}
+  {{ partial "sections_join_r" (dict "p1" .p1.Parent "p2" .p2 "s" .s "r" .r) }}
+{{ else if not .p1.IsHome }}
+  {{ partial "sections_join_r" (dict "p1" .p1.Site.Home "p2" .p2 "s" .s "r" .r) }}
+{{ end }}
+
+{{ $t := .p1.Title}}
+{{ if or (not $t) .r.path }}
+  {{ with .File }}
+    {{ $t = .ContentBaseName }}
+  {{ end }}
+{{ end }}
+
+{{ if or
+  (and .p1.IsPage (.r.page | default false))
+  (and .p1.IsSection (.r.section | default true))
+  (and .p1.IsHome (.r.home | default false))
+}}
+{{ .s.Add "path" (slice $t) }}
+{{end}}
+
