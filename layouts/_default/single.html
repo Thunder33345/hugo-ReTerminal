@@ -25,6 +25,25 @@
     </div>
   </div>
 
+  {{$p := .}}
+  {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
+    {{ if $p.Param $taxonomyName }}
+      {{ with ($.Site.GetPage (printf "/%s/" $taxonomyName)) }}
+        {{warnf "L: %s in %s" .Params.hint .}}
+    {{ end }}
+
+      {{ warnf "found %s in %s" $taxonomy.Params.hint $taxonomyName}}
+
+
+      <a href="{{ (urlize (printf "%s/" $taxonomyName )) | absLangURL }}">{{ $taxonomyName }}</a>:
+      <span class="post-tags">
+        {{ range (index $p.Params $taxonomyName) }}
+        #<a href="{{ (urlize (printf "%s/%s/" $taxonomyName .)) | absLangURL }}">{{ . }}</a>&nbsp;
+        {{ end }}
+      </span>
+    {{ end }}
+  {{ end }}
+
   {{ if .Params.tags }}
   <span class="post-tags">
     {{ range .Params.tags }}
