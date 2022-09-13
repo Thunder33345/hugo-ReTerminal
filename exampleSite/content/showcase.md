@@ -2,6 +2,7 @@
 title = "Showcase"
 date = "2018-07-18"
 author = "Hello Robot"
+toc = true
 +++
 
 ## Header 2
@@ -82,3 +83,17 @@ Curabitur scelerisque felis viverra varius scelerisque. Ut enim libero, molestie
   - Praesent fermentum orci quis leo facilisis posuere.
 
 Aliquam erat volutpat. In hac habitasse platea dictumst. Nunc ut tincidunt mauris. Sed at gravida risus, id semper magna. Nullam vitae enim mattis, sodales neque non, pharetra elit. Cras sit amet sagittis augue, et finibus turpis. Ut tempus tincidunt diam vel pharetra. Nulla porttitor odio sit amet nulla scelerisque, quis aliquam mi imperdiet. Sed tincidunt dui vel tellus vestibulum rhoncus. Donec tempus ultrices velit.
+
+### Checkboxes
+
+Pharetra pharetra massa massa ultricies mi quis hendrerit.
+
+- [ ] Ut consequat semper viverra nam libero.
+- [ ] Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan.
+- [X] Etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus.
+- [ ] Mi quis hendrerit dolor magna eget est lorem. Pellentesque eu tincidunt tortor aliquam.
+- [X] Interdum velit euismod in pellentesque massa placerat duis.
+- [X] A cras semper auctor neque vitae tempus quam pellentesque nec.
+
+At ultrices mi tempus imperdiet nulla malesuada.
+
