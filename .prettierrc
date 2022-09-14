@@ -2,10 +2,18 @@
   "parser": "babel",
   "printWidth": 100,
   "trailingComma": "all",
-  "overrides": [{
-    "files": ".html",
-    "options": {
-      "parser": "html"
+  "overrides": [
+    {
+      "files": ".html",
+      "options": {
+        "parser": "html"
+      }
+    },
+    {
+      "files": "*.css",
+      "options": {
+        "parser": "css"
+      }
     }
-  }]
+  ]
 }
