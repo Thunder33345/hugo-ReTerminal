@@ -1,34 +1,34 @@
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
-const path = require("path");
+const path = require('path')
 
-const join = (...paths) => path.join(__dirname, ...paths);
+const join = (...paths) => path.join(__dirname, ...paths)
 
 module.exports = (env, { mode }) => ({
-  mode: mode == "development" ? "development" : "production",
-  devtool: mode == "development" ? env.FULLMAP ? "source-map" : "eval-cheap-source-map" : false,
-  //source-map will show for css
-  //eval-cheap-source-map for normal
+  mode: mode === 'development' ? 'development' : 'production',
+  devtool: mode === 'development' && env.FULLMAP ? 'source-map' : false,
+  // source-map will show for css
+  // eval-cheap-source-map for normal
   resolve: {
-    extensions: [".js", ".css"],
-    modules: ["assets", "node_modules"],
+    extensions: ['.js', '.css'],
+    modules: ['assets', 'node_modules'],
   },
   entry: {
-    main: join("assets", "js", "menu.js"),
-    languageSelector: join("assets", "js", "languageSelector.js"),
-    prism: join("assets", "js", "prism.js"),
-    style: join("assets", "css", "style.css"),
-    red: join("assets", "css", "color", "red.css"),
-    blue: join("assets", "css", "color", "blue.css"),
-    green: join("assets", "css", "color", "green.css"),
-    pink: join("assets", "css", "color", "pink.css"),
+    main: join('assets', 'js', 'menu.js'),
+    languageSelector: join('assets', 'js', 'languageSelector.js'),
+    prism: join('assets', 'js', 'prism.js'),
+    style: join('assets', 'css', 'style.css'),
+    red: join('assets', 'css', 'color', 'red.css'),
+    blue: join('assets', 'css', 'color', 'blue.css'),
+    green: join('assets', 'css', 'color', 'green.css'),
+    pink: join('assets', 'css', 'color', 'pink.css'),
   },
   output: {
-    filename: "[name].js",
-    path: join("static/assets"),
-    publicPath: "",
+    filename: '[name].js',
+    path: join('static/assets'),
+    publicPath: '',
   },
   performance: {
     hints: false,
@@ -39,9 +39,9 @@ module.exports = (env, { mode }) => ({
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"],
+            presets: ['@babel/preset-env'],
           },
         },
       },
@@ -49,7 +49,7 @@ module.exports = (env, { mode }) => ({
         test: /\.(png|jpg|woff|woff2|ttf|eot|svg)$/,
         use: [
           {
-            loader: "url-loader",
+            loader: 'url-loader',
             options: {
               limit: 8192,
             },
@@ -61,23 +61,23 @@ module.exports = (env, { mode }) => ({
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: "[local]",
+                localIdentName: '[local]',
               },
               import: true,
               importLoaders: 1,
             },
           },
-          "postcss-loader",
+          'postcss-loader',
         ],
       },
     ],
   },
   optimization: {
     splitChunks: {
-      name: "vendor",
+      name: 'vendor',
       minChunks: 2,
     },
     minimize: true,
@@ -90,19 +90,19 @@ module.exports = (env, { mode }) => ({
   },
   plugins: [
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [join("static/assets")],
+      cleanOnceBeforeBuildPatterns: [join('static/assets')],
       cleanAfterEveryBuildPatterns: [
-        join("static/assets/style.js"),
-        join("static/assets/blue.js"),
-        join("static/assets/green.js"),
-        join("static/assets/red.js"),
-        join("static/assets/pink.js"),
+        join('static/assets/style.js'),
+        join('static/assets/blue.js'),
+        join('static/assets/green.js'),
+        join('static/assets/red.js'),
+        join('static/assets/pink.js'),
       ],
       verbose: true,
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css",
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
   ],
-});
+})
