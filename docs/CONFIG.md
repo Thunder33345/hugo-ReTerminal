@@ -107,6 +107,12 @@ paginate = 5
   "path/to/section" = true
   "" = false
 
+[params.listSection]
+  #list enables section listing
+  list = true
+  #post enables adding latest post into section
+  latest = true
+
 [languages]
   [languages.en]
     languageName = "English"

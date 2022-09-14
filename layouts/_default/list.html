@@ -4,6 +4,7 @@
       {{ partial "display_content" .}}
     </div>
   {{ end }}
+  {{ partial "subsection.html" . }}
   <div class="posts">
     {{ range .Paginator.Pages }}
       <div class="post on-list">

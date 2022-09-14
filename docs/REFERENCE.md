@@ -9,6 +9,32 @@ Configuration Location:
 - Fallback: This setting can be set in a page's frontmatter, or a site's main config.
 - Frontmatter: This setting can only be set in a specific page's frontmatter.
 
+### Section Listing
+Controls if subsection are listed
+
+TIP: you can add weights into a section's `_index.md` to adjust sorting
+
+Site Config:
+```toml
+[params.listSection]
+  #list enables subsection listing
+  list = true
+  #post enables adding latest post into subsection
+  latest = true
+```
+
+Frontmatter config:
+
+You can use this to overwrite site level config for an individual section.
+
+`hideSections` allows you to hide a specified section, you can use the section's folder name(lowercased) to hide a section, if section path is not available for whatever reason, section's title(lowercased) will be fallback.
+
+```toml
+showSections = true
+showSectionLatest = true
+hideSections = []
+```
+
 ### Pager control
 Controls if pager button is visible
 Configuration can only be done on site config
