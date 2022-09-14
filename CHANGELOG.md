@@ -6,6 +6,8 @@ Hack fixed colors not being shaded properly by postcss color mod
 ## 2022-09-14
 Added pager control
 
+Fixed empty dates showing on list
+
 ## 2022-09-05
 Added meta theme-color support
 Added support for listing all alternative formats
