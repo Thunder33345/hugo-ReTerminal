@@ -1,0 +1,37 @@
+{{ $has := false }}
+    {{ range first 1 (where  .Pages "IsSection" true) }}
+    {{ $has = true }}
+{{ end }}
+
+{{ if and (.Param "showSections" | default (.Site.Param "listSection.list" | default true)) $has }}
+<div class="subsection">
+    <h4 class="subsection-header">Subsections:</h4>
+    <ol class="subsection-list">
+        {{ range where .Pages "IsSection" true }}
+            {{ $name := (lower .Title)}}
+            {{with .File.ContentBaseName }}
+                {{$name = lower .}}
+            {{end}}
+            {{ if in $.Params.hideSections $name }}
+                {{ continue }}
+            {{ end }}
+            {{ $pv := false}}
+            {{ range first 1 .RegularPages.ByDate.Reverse }}
+                {{ $pv = .}}
+            {{ end }}
+            {{ $latest := .Param "showSectionLatest" | default (.Site.Param "listSection.latest" | default true)}}
+            <li class="subsection-entry">
+                <a class="subsection-entry-title" href="{{ .Permalink }}">{{ .Title }}</a>
+                {{ if and $latest $pv }}
+                    <a class="subsection-entry-meta" href="{{ $pv.Permalink }}">
+                        <span>{{ $pv.Title }}</span>
+                    {{ with $pv.Date }}
+                        <span>{{ .Format "2006-01-02" }}</span>
+                    {{end}}
+                    </a>
+                {{ end }}
+            </li>
+        {{ end }}
+    </ol>
+</div>
+{{ end }}

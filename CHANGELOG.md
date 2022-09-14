@@ -1,10 +1,12 @@
 # Changelog
 ## 2022-09-22
 
-Hack fixed colors not being shaded properly by postcss color mod
-
-## 2022-09-14
+Added section listing
 Added pager control
+
+Fixed empty dates showing on list
+
+Hack fixed colors not being shaded properly by postcss color mod
 
 ## 2022-09-05
 Added meta theme-color support

@@ -4,6 +4,7 @@
       {{ partial "display_content" .}}
     </div>
   {{ end }}
+  {{ partial "subsection.html" . }}
   <div class="posts">
     {{ range .Paginator.Pages }}
       <div class="post on-list">
@@ -15,9 +16,11 @@
           </a></h1>
         <div class="post-meta">
           <div class="post-meta-info">
-            <span class="post-date">
-              {{- .Date.Format "2006-01-02" -}}
-            </span>
+            {{ with .Date}}
+              <span class="post-date">
+                {{- .Format "2006-01-02" -}}
+              </span>
+            {{end}}
             {{ with .Params.Author }}
               <span class="post-author">{{ . }}</span>
             {{ end }}

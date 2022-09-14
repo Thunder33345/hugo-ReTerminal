@@ -6,21 +6,36 @@ themesDir = "../.."
 
 enableRobotsTXT = true
 
+[taxonomies]
+  series = 'series'
+  tag = 'tags'
+
 [params]
   contentTypeName = "posts"
-  themeColor = "orange"
+  themeColor = "green"
   showMenuItems = 5
   fullWidthTheme = false
   centerTheme = true
   showLastUpdated = true
   noindex = false
+  metaThemeColor = "#000000"
 [params.metaRobots]
   assumeProduction = true
   forceNoindex = false
   disableAutoIndex = false
   indexValue = "follow, index"
   noindexValue = "noindex, nofollow"
+[params.pager]
+  default = true
+[params.pager.overwrite]
+  "cookbook/recipe" = false
+  "" = false
 
+[markup]
+  [markup.tableOfContents]
+    endLevel = 5
+    ordered = false
+    startLevel = 0
 
 [languages]
   [languages.en]

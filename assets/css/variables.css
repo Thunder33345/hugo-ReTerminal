@@ -6,6 +6,8 @@
 
   /* @HACK: fixes button.css .button:hover not being processed correctly for other colors */
   --accent-hack-a-90: color-mod(var(--accent) a(90%));
+  /* @HACK: used at .subsection-entry-meta */
+  --accent-hack-a-80: color-mod(var(--accent) a(80%));
 
   /* variables for js, must be the same as these in @custom-media queries */
   --phoneWidth: (max-width: 684px);
