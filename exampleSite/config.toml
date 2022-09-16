@@ -7,8 +7,10 @@ themesDir = "../.."
 enableRobotsTXT = true
 
 [taxonomies]
-  series = 'series'
   tag = 'tags'
+  series = 'series'
+[params.taxonomy]
+  order = ["series","tags"]
 
 [params]
   contentTypeName = "posts"
