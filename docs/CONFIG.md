@@ -113,6 +113,10 @@ paginate = 5
   #post enables adding latest post into section
   latest = true
 
+[params.taxonomy]
+  #order sets the list order of taxonomy
+  order = ["series","tags"]
+
 [languages]
   [languages.en]
     languageName = "English"

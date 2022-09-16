@@ -92,6 +92,26 @@
     }
   }
 
+  &-tax {
+    &-list{
+      display: flex;
+      & > *:not(:last-child){
+        margin-right: 0.5em;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+    /* &-name{
+    } */
+    &-value{
+      opacity: .5;
+      &::before{
+        content: "#";
+      }
+    }
+  }
+
   &-content {
     margin-top: 30px;
   }

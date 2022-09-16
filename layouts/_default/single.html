@@ -26,31 +26,21 @@
   </div>
 
   {{$p := .}}
-  {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
-    {{ if $p.Param $taxonomyName }}
-      {{ with ($.Site.GetPage (printf "/%s/" $taxonomyName)) }}
-        {{warnf "L: %s in %s" .Params.hint .}}
-    {{ end }}
-
-      {{ warnf "found %s in %s" $taxonomy.Params.hint $taxonomyName}}
-
-
-      <a href="{{ (urlize (printf "%s/" $taxonomyName )) | absLangURL }}">{{ $taxonomyName }}</a>:
-      <span class="post-tags">
-        {{ range (index $p.Params $taxonomyName) }}
-        #<a href="{{ (urlize (printf "%s/%s/" $taxonomyName .)) | absLangURL }}">{{ . }}</a>&nbsp;
-        {{ end }}
-      </span>
+  {{ range $taxData := (partialCached "taxonomy/get_ordered_list.html" .) }}
+    {{ if and ($p.Param $taxData.Data.Plural) $taxData }}
+      {{$name:=$taxData.Data.Plural}}
+      <div class="post-tax-list">
+        {{ if not ($taxData.Param "taxonomy.displayBlank")}}
+          <a class="post-tax-name" href="{{ $taxData.Permalink | absLangURL }}">{{ $taxData.Param "taxonomy.display" | default (printf "%s:" $taxData.Title) }}</a>
+        {{end}}
+        {{ range (index $p.Params $name) }}
+          {{$value := $p.Site.GetPage (printf "/%s/%s" $name .)}}
+          <a class="post-tax-value" href="{{ $value.Permalink | absLangURL }}">{{ $value.Title }}</a>
+         {{ end }}
+      </div>
     {{ end }}
   {{ end }}
 
-  {{ if .Params.tags }}
-  <span class="post-tags">
-    {{ range .Params.tags }}
-    #<a href="{{ (urlize (printf "tags/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;
-    {{ end }}
-  </span>
-  {{ end }}
   {{ partial "cover.html" . }}
 
   {{ if (.Params.Toc | default .Site.Params.Toc) }}

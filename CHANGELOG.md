@@ -1,6 +1,7 @@
 # Changelog
 ## 2022-09-22
 
+Added procedurally generated taxonomy support and stop being hardcoded to only tags
 Added section listing
 Added pager control
 

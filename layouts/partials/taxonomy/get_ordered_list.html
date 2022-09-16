@@ -1,0 +1,26 @@
+{{/* Generate a list of taxonomies according to .Site.Params.taxonomy.order */}}
+{{/* require, page context, should be called with partialCached */}}
+{{$td := slice}}
+{{if isset .Site.Params.taxonomy "order"}}
+  {{range $name := .Site.Params.taxonomy.order}}
+    {{$td = $td | append $name}}
+  {{end}}
+  {{range $name, $_ := .Site.Taxonomies}}
+    {{if not (in $td $name)}}
+        {{$td = $td | append $name}}
+    {{end}}
+  {{end}}
+{{else}}
+  {{range $name, $_ := .Site.Taxonomies}}
+    {{$td = $td | append $name}}
+  {{end}}
+{{end}}
+
+{{$t := slice}}
+{{range $td}}
+    {{$taxonomyData := $.Site.GetPage (printf "/%s/" .)}}
+    {{if $taxonomyData}}
+        {{$t = $t | append $taxonomyData}}
+    {{end}}
+{{end}}
+{{return $t}}

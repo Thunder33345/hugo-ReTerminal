@@ -9,6 +9,28 @@ Configuration Location:
 - Fallback: This setting can be set in a page's frontmatter, or a site's main config.
 - Frontmatter: This setting can only be set in a specific page's frontmatter.
 
+### Taxonomy Configuration
+You can configure taxonomy orders on site setting with the following
+```toml
+[params.taxonomy]
+  order = ["series","tags"]
+```
+In taxonomy's frontmatter, you can configure a term's rendering
+for example to change `tags`'s taxonomy, it's `./content/tags/_index.md`
+```toml
+# title will change what gets display as title
+title = "Tags"
+# hidden will stop taxonomy's term displays as nothing
+taxonomy.displayBlank = true
+# changes overwrite how it's displayed
+taxonomy.display = ""
+```
+For example you could set `taxonomy.display` to be `Tagged as:` which would make it show as set
+
+> Tagged as: #foo #bar
+
+Setting to `displayBlank` will hide the taxonomy terms but display the values
+
 ### Section Listing
 Controls if subsection are listed
 
