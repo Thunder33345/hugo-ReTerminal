@@ -5,12 +5,12 @@
   width: 100%;
   margin: 40px 0;
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     position: absolute;
     visibility: hidden;
   }
 
-  input[type="checkbox"]:checked {
+  input[type='checkbox']:checked {
     ~ pre,
     ~ .code-toolbar pre {
       height: 0;

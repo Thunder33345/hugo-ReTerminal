@@ -1,8 +1,8 @@
 :root {
-  --accent: #FFA86A;
-  --background: color-mod(var(--accent) blend(#1D1E28 98%));
+  --accent: #ffa86a;
+  --background: color-mod(var(--accent) blend(#1d1e28 98%));
   --color: white;
-  --border-color: rgba(255, 255, 255, .1);
+  --border-color: rgba(255, 255, 255, 0.1);
 
   /* @HACK: fixes button.css .button:hover not being processed correctly for other colors */
   --accent-hack-a-90: color-mod(var(--accent) a(90%));

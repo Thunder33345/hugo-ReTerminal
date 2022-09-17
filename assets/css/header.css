@@ -31,7 +31,13 @@
 
     &:after {
       content: '';
-      background: repeating-linear-gradient(90deg, var(--accent), var(--accent) 2px, transparent 0, transparent 10px);
+      background: repeating-linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent) 2px,
+        transparent 0,
+        transparent 10px
+      );
       display: block;
       width: 100%;
       right: 10px;
@@ -46,7 +52,8 @@
 
   .menu {
     --shadow-color: color-mod(var(--background) a(80%));
-    --shadow: 0 10px var(--shadow-color), -10px 10px var(--shadow-color), 10px 10px var(--shadow-color);
+    --shadow: 0 10px var(--shadow-color), -10px 10px var(--shadow-color),
+      10px 10px var(--shadow-color);
     margin: 20px 1px;
 
     @media (--phone) {
@@ -161,7 +168,7 @@
   }
 }
 
-.breadcrumb{
+.breadcrumb {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -185,7 +192,7 @@
   }
 
   & a:after {
-    content: "/";
+    content: '/';
     color: #000;
   }
 
