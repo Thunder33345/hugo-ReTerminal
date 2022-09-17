@@ -117,6 +117,10 @@ paginate = 5
   #order sets the list order of taxonomy
   order = ["series","tags"]
 
+[params.breadcrumb]
+  disable = false
+  hidePages = false
+
 [languages]
   [languages.en]
     languageName = "English"

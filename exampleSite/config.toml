@@ -32,6 +32,8 @@ enableRobotsTXT = true
 [params.pager.overwrite]
   "cookbook/recipe" = false
   "" = false
+[params.breadcrumb]
+  hidePages = false
 
 [markup]
   [markup.tableOfContents]

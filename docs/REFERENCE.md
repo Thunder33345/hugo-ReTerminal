@@ -9,6 +9,29 @@ Configuration Location:
 - Fallback: This setting can be set in a page's frontmatter, or a site's main config.
 - Frontmatter: This setting can only be set in a specific page's frontmatter.
 
+### Breadcrumb configuration
+Breadcrumb will list all the parent sections and home in a nav menu.
+
+You can configure breadcrumbs with the following:
+```toml
+# sie config
+[params.breadcrumb]
+  # disable the breadcrumbs entirely
+  disable = false
+  # hidePages will hide pages from showing up in breadcrumb
+  hidePages = false
+```
+
+```toml
+# in per section's _index.md's frontmatter(fallback)
+[breadcrumb]
+  # title overwrites the use of default section title
+  title = ""
+  # hidden hides a specific section from breadcrumb
+  hidden = false
+```
+you can use `breadcrumb.title` to shorten otherwise longer titles in breadcrumb, and `breadcrumb.hidden` to hide certain sections like home
+
 ### Taxonomy Configuration
 You can configure taxonomy orders on site setting with the following
 ```toml

@@ -1,0 +1,17 @@
+{{- if not ( .Param "breadcrumb.disable" | default false) -}}
+<div  class="breadcrumb">
+    {{- template "breadcrumbnav" (dict "p1" . "p2" .) -}}
+</div>
+{{- end -}}
+{{- define "breadcrumbnav" }}
+  {{- if .p1.Parent }}
+    {{- template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+  {{- else if not .p1.IsHome }}
+    {{- template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+  {{- end }}
+  {{- if and (not (.p1.Param "breadcrumb.hidden" | default false))
+         (or (not .p1.IsPage) (not (.p1.Site.Param "breadcrumb.hidePages" | default false)))}}
+      {{- $t := .p1.Param "breadcrumb.title" | default .p1.Title}}
+      <a {{- if eq .p1 .p2 }} class="active"{{ end }} href="{{ .p1.Permalink }}">{{ $t }}</a>
+  {{- end }}
+{{- end }}
