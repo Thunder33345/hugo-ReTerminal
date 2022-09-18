@@ -1,0 +1,15 @@
+{{- if .IsNamedParams }}
+
+
+{{- $link := .Get "href"}}
+{{- $ref := .Get "referrerpolicy" | default "no-referrer"}}
+
+{{- $rel := .Get "rel" | default "nofollow" }}
+
+{{- $target := .Get "target" | default "_self" }}
+<a href="{{$link}}" referrerpolicy="{{$ref}}" rel="{{$rel}}" target="{{$target}}">{{- .Inner }}</a>
+
+
+{{- else }}
+{{- errorf "cant run link shortcode without named params at %s" .Position }}
+{{- end}}

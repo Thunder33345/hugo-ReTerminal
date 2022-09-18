@@ -1,6 +1,7 @@
 # Changelog
-## 2022-09-22
+## 2022-09-10
 
+Added loads of shortcodes
 Added breadcrumbs
 Added procedurally generated taxonomy support and stop being hardcoded to only tags
 Added section listing

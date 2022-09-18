@@ -24,44 +24,6 @@ see [/docs](./docs/#readme) for reference
 - **really nice duotone**, custom syntax highlighting based on [**PrismJS**](https://prismjs.com)
 - fully responsive
 
-#### Built-in shortcodes
-
-- **`image`** (props required: **`src`**; props optional: **`alt`**, **`position`** (**left** is default | center | right), **`style`**)
-  - e.g.
-  ```go
-  {{< image src="/img/hello.png" alt="Hello Friend" position="center" style="border-radius: 8px;" >}}
-  ```
-- **`figure`** (same as `image`, plus few optional props: **`caption`**, **`captionPosition`** (left | **center** is default | right), **`captionStyle`**)
-  - e.g.
-  ```go
-  {{< figure src="/img/hello.png" alt="Hello Friend" position="center" style="border-radius: 8px;" caption="Hello Friend!" captionPosition="right" captionStyle="color: red;" >}}
-  ```
-- **`code`** (props required: **`language`**; props optional: **`title`**, **`id`**, **`expand`** (default "△"), **`collapse`** (default "▽"), **`isCollapsed`**)
-  - e.g.
-  ```go
-  {{< code language="css" title="Really cool snippet" id="1" expand="Show" collapse="Hide" isCollapsed="true" >}}
-  pre {
-    background: #1a1a1d;
-    padding: 20px;
-    border-radius: 8px;
-    font-size: 1rem;
-    overflow: auto;
-
-    @media (--phone) {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
-
-    code {
-      background: none !important;
-      color: #ccc;
-      padding: 0;
-      font-size: inherit;
-    }
-  }
-  {{< /code >}}
-  ```
-
 #### Code highlighting
 
 A custom syntax highlighting based on PrismJS. All you need to do is to wrap you code like this:

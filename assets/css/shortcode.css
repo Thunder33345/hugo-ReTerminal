@@ -1,0 +1,18 @@
+.outline {
+  border: 2px solid var(--accent);
+  border-left: 4px double var(--accent);
+  /* border-left: 0.3rem double var(--accent);
+  border-right: 1px solid var(--accent);;
+  border-top: 1px solid var(--accent);;
+  border-bottom: 1px solid var(--accent);; */
+  padding: 0.5em;
+  padding-left: 1em;
+
+  & .head {
+    margin-bottom: 1em;
+    & .header {
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+  }
+}

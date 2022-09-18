@@ -1,0 +1,8 @@
+<div class="outline">
+  {{ with (.Get 0) }}<div class="head">
+    <div class="header">{{ markdownify .}}</div>
+    {{ with ($.Get 1) }}<div class="subtitle">{{ markdownify .}}</div>{{ end }}
+    <hr>
+  </div>{{ end }}
+  <div class="body">{{ markdownify .Inner }}</div>
+</div>
