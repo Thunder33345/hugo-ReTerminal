@@ -5,11 +5,13 @@ author = "Hello Robot"
 toc = true
 +++
 
+Also see [Shortcodes]({{<ref "/shortcode">}})
+
 ## Header 2
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante. **Donec quis dolor nec nunc mollis interdum vel in purus**. Sed vitae leo scelerisque, sollicitudin elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. __Nullam nec interdum metus__. *Aenean rutrum ligula sodales ex auctor*, sed tempus dui mollis. Curabitur ipsum dui, ~~aliquet nec~~ commodo at, tristique eget ante. **Donec quis dolor nec nunc mollis interdum vel in purus**. Sed vitae leo scelerisque, sollicitudin elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique porttitor est. Proin laoreet iaculis ornare. `Nullam ut neque quam`.
 
-> Fusce pharetra suscipit orci nec tempor. Quisque vitae sem sit amet sem mollis consequat. Sed at imperdiet lorem. Vestibulum pharetra faucibus odio, ac feugiat tellus sollicitudin at. Pellentesque varius tristique mi imperdiet dapibus. Duis orci odio, sodales lacinia venenatis sit amet, feugiat et diam.
+> Fusce pharetra suscipit orci nec tempor. Quisque vitae sem sit amet sem mollis consequat. **Sed at imperdiet lorem.** Vestibulum pharetra faucibus odio, ac feugiat tellus sollicitudin at. Pellentesque varius tristique mi imperdiet dapibus. Duis orci odio, sodales lacinia venenatis sit amet, feugiat et diam.
 
 ### Header 3
 
@@ -89,46 +91,55 @@ Aliquam erat volutpat. In hac habitasse platea dictumst. Nunc ut tincidunt mauri
 Pharetra pharetra massa massa ultricies mi quis hendrerit.
 
 - [ ] Ut consequat semper viverra nam libero.
-- [ ] Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan.
-- [X] Etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus.
-- [ ] Mi quis hendrerit dolor magna eget est lorem. Pellentesque eu tincidunt tortor aliquam.
+  - [ ] Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan.
+    - [X] Etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus.
+    - [ ] Mi quis hendrerit dolor magna eget est lorem. Pellentesque eu tincidunt tortor aliquam.
 - [X] Interdum velit euismod in pellentesque massa placerat duis.
 - [X] A cras semper auctor neque vitae tempus quam pellentesque nec.
 
-At ultrices mi tempus imperdiet nulla malesuada.
+At ultrices mi tempus imperdiet nulla malesuada. [^1]
 
+[^1]: And that's the footnote.
 
+    That's the second paragraph.
+----
+[^2]: And that's a second footnote.
+
+    And that's the second paragraph, again.
 ### Lists
 
 - Morbi a purus id eros ornare porttitor non nec arcu.
 - Etiam in mi feugiat, semper ipsum quis, rutrum dui.
 - - Sed sollicitudin orci vel sapien tristique semper.
-- - Duis vitae lacus in dolor rutrum sollicitudin eget sit amet erat.
-- Sed sit amet elit malesuada, faucibus nibh sit amet, laoreet ligula.
-- - Ut ut eros suscipit neque tincidunt vulputate.
-- Fusce laoreet nisl scelerisque, vehicula tellus eget, maximus leo.
-- - Vestibulum eget risus in mi ultrices consequat non in mi.
-- - Quisque commodo dui sed erat imperdiet, eget tristique leo laoreet.
-- Sed ullamcorper leo ac justo pellentesque porta.
-- - Fusce eget odio efficitur, bibendum tortor id, tempus metus.
-- - Maecenas ut lectus porttitor, tincidunt ipsum eget, vulputate erat.
-- - Cras ac nunc aliquet, condimentum diam ac, posuere velit.
+- - - Duis vitae lacus in dolor rutrum sollicitudin eget sit amet erat.
+- - - - Sed sit amet elit malesuada, faucibus nibh sit amet, laoreet ligula.
+- - - - - Ut ut eros suscipit neque tincidunt vulputate.
 
 1. Vivamus posuere purus eu arcu scelerisque, sit amet molestie odio tempor.
-1. Vestibulum euismod ante ornare hendrerit vehicula.
 1. 1. Aliquam tristique massa eu fermentum ullamcorper.
-1. 1. Curabitur convallis libero sit amet tortor maximus, sit amet mattis lorem consectetur.
-1. 1. Nulla dapibus felis eu leo posuere consectetur.
 1. 1. 1. Nullam viverra dolor vel lectus pulvinar mollis.
-1. 1. 1. Sed sit amet risus in velit vehicula feugiat eget id augue.
-1. 1. 1. Maecenas pulvinar dui vel porta ornare.
-1. Mauris vitae elit quis massa tempor imperdiet sed eu tellus.
+1. 1. 1. 1. Sed sit amet risus in velit vehicula feugiat eget id augue.
+1. 1. 1. 1. 1. Maecenas pulvinar dui vel porta ornare.
 1. - Phasellus quis dolor eu tortor sagittis mattis.
-1. - Aliquam ullamcorper risus vel nibh aliquet, at dapibus justo consequat.
 
 - Vivamus posuere purus eu arcu scelerisque, sit amet molestie odio tempor.
-- Vestibulum euismod ante ornare hendrerit vehicula.
 - 1. Aliquam tristique massa eu fermentum ullamcorper.
-- 1. Curabitur convallis libero sit amet tortor maximus, sit amet mattis lorem consectetur.
-- 1. Nulla dapibus felis eu leo posuere consectetur.
 - 1. 1. Nullam viverra dolor vel lectus pulvinar mollis.
+- 1. 1. 1. Nullam viverra dolor vel lectus pulvinar mollis.
+
+### Tables
+| a                      | b                                    | c                    | d                         |
+|------------------------|--------------------------------------|----------------------|---------------------------|
+| fusce nec nisi eu      | eget orci porttitor mollis tristique | euismod elit quis    | orci non ex mattis        |
+| orci non ex mattis     | fermentum felis in leo               | metus mollis pretium | eu ligula condimentum     |
+| fermentum felis in leo | metus mollis pretium                 | vel risus suscipit   | pellentesque diam at enim |
+| ...                    | ...                                  | ...                  | ...                       |
+
+Apple
+: Pomaceous fruit of plants of the genus Malus in
+the family Rosaceae.
+
+Orange
+: The fruit of an evergreen tree of the genus Citrus.[^2]
+
+foobar baz
