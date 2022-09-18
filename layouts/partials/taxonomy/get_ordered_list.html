@@ -1,7 +1,7 @@
 {{/* Generate a list of taxonomies according to .Site.Params.taxonomy.order */}}
 {{/* require, page context, should be called with partialCached */}}
 {{$td := slice}}
-{{if isset .Site.Params.taxonomy "order"}}
+{{if and (.Site.Params.taxonomy) (isset .Site.Params.taxonomy "order")}}
   {{range $name := .Site.Params.taxonomy.order}}
     {{$td = $td | append $name}}
   {{end}}
