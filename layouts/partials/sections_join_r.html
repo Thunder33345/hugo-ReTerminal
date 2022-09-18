@@ -6,8 +6,11 @@
 
 {{ $t := .p1.Title}}
 {{ if or (not $t) .r.path }}
-  {{ with .File }}
-    {{ $t = .ContentBaseName }}
+  {{ $f := .p1.File}}
+  {{ if  $f }}
+    {{ $t = $f.ContentBaseName }}
+  {{ else }}
+    {{errorf "[pager] cannot access .File on '%s' for params.pager.overwrite configuration" .p1}}
   {{ end }}
 {{ end }}
 
