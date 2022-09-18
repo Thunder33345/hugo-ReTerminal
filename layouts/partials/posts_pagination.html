@@ -3,9 +3,11 @@
 {{- $pathSlice := partialCached "sections_join" (dict "p" .CurrentSection "path" true) .CurrentSection  -}}
 {{- $path := delimit $pathSlice "/" | lower -}}
 
-{{- if isset .Site.Params.pager.overwrite $path -}}
-    {{- $res := index .Site.Params.pager.overwrite $path -}}
-    {{- $paginate = $res -}}
+{{- with .Site.Params.pager.overwrite -}}
+    {{- if isset . $path -}}
+        {{- $res := index . $path -}}
+        {{- $paginate = $res -}}
+    {{- end -}}
 {{- end -}}
 
 {{- if and (or .NextInSection .PrevInSection) $paginate -}}
