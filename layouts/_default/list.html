@@ -7,7 +7,7 @@
   {{ partial "subsection.html" . }}
   <div class="posts">
     {{ range .Paginator.Pages }}
-      <div class="post on-list">
+      <article class="post on-list">
         <h1 class="post-title">
           <a href="{{ .Permalink }}">{{ .Title | markdownify -}}
             {{- if .Params.Draft -}}
@@ -17,9 +17,9 @@
         <div class="post-meta">
           <div class="post-meta-info">
             {{ with .Date}}
-              <span class="post-date">
+              <time class="post-date">
                 {{- .Format "2006-01-02" -}}
-              </span>
+              </time>
             {{end}}
             {{ with .Params.Author }}
               <span class="post-author">{{ . }}</span>
@@ -49,7 +49,7 @@
           {{ else if .Description }}
             {{ .Description | markdownify }}
           {{ else }}
-            {{ .Summary | markdownify }}
+            {{ .Summary }}
           {{ end }}
         </div>
 
@@ -59,7 +59,7 @@
             href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore }} →</a>
         </div>
         {{ end }}
-      </div>
+      </article>
     {{ end }}
     {{ partial "pagination.html" . }}
   </div>
