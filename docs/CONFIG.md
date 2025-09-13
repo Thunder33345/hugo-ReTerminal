@@ -118,7 +118,9 @@ paginate = 5
   order = ["series","tags"]
 
 [params.breadcrumb]
+  #disable disables the breadcrumb entirely
   disable = false
+  #hidePages hides pages from showing in breadcrumb bar
   hidePages = false
 
 [languages]

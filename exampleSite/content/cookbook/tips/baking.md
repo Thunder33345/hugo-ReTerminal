@@ -5,6 +5,8 @@ author = "Lorem Ipsum"
 description = "Nullam eu leo justo. Praesent rhoncus sagittis dui, eu ornare velit pellentesque id. Vivamus euismod, magna sed venenatis accumsan, purus."
 tags = ["recipe","baking"]
 series = ["food"]
+weight=1
+showAnchor=false
 +++
 # Pedum auster a orbem commisit Stabiasque remeat
 
